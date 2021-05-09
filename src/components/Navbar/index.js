@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { LogoIcon, ShopIcon } from '../../assets/icons';
 
 //components
-import { Navbar, Nav, Container, Row, Col, Button } from 'react-bootstrap';
+import { Navbar, Nav, Row, Col, Button } from 'react-bootstrap';
 
 const index = () => {
   return (

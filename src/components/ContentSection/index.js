@@ -11,7 +11,7 @@ import styled from 'styled-components';
 
 //images
 import { MainImage1, MainImage2, MainImage3 } from '../../assets/images/MainImages';
-import { image1, image2, image3, image4, image5, image6, image7, image8, image9 } from '../../assets/images/SubImages';
+import { image1, image2, image3, image4, image5, image8 } from '../../assets/images/SubImages';
 
 const ContentSection = () => {
   const [index, setIndex] = React.useState(0);
@@ -53,7 +53,7 @@ const data = [
       image1: image5,
       image2: image3,
       image3: image4,
-      image4: image6,
+      image4: image8,
       image5: image1,
       image6: image2,
       image7: image5,
@@ -75,7 +75,7 @@ const data = [
     subImages: {
       image1: image3,
       image2: image4,
-      image3: image6,
+      image3: image8,
       image4: image1,
       image5: image2,
       image6: image5,
@@ -98,7 +98,7 @@ const data = [
 
     subImages: {
       image1: image4,
-      image2: image6,
+      image2: image8,
       image3: image1,
       image4: image2,
       image5: image5,
