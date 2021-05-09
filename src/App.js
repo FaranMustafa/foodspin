@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Spinner from './features/spinner';
+import CircleSection from './components/CircleSection';
 
 const NavBar = React.lazy(() => import('./components/Navbar'));
 
@@ -11,6 +12,7 @@ function App() {
     <React.Suspense fallback={Spinner}>
       <Layout>
         <NavBar />
+        <CircleSection />
       </Layout>
     </React.Suspense>
   );
