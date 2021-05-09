@@ -3,7 +3,6 @@ import React from 'react';
 //components
 import TextDetails from './textDetail';
 import RotateFood from './foodRotate';
-// import CircularSection from '../CircleSection';
 import { Row, Col } from 'react-bootstrap';
 
 //styles
@@ -23,7 +22,6 @@ const ContentSection = () => {
   };
   return (
     <ContentContainer>
-      {/* <CircularSection backgroundColor={data[index].backgroundColor} /> */}
       <Row className="w-100">
         <Col md={5} sm={12}>
           <TextDetails data={data[index]} />
