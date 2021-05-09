@@ -17,14 +17,14 @@ const index = () => {
         <Navbar.Toggle />
         <Navbar.Collapse>
           <Row className="w-100">
-            <Col xs={8} className="d-flex justify-content-center align-items-center">
+            <Col xs={10} className="d-flex justify-content-center align-items-center">
               <Nav>
-                <Nav.Link>Breakfast</Nav.Link>
-                <Nav.Link>Lunch</Nav.Link>
-                <Nav.Link>Dinner</Nav.Link>
+                <NavLink className="navlinks-styles">Breakfast</NavLink>
+                <NavLink className="navlinks-styles">Lunch</NavLink>
+                <NavLink className="navlinks-styles">Dinner</NavLink>
               </Nav>
             </Col>
-            <Col xs={4} className="d-flex justify-content-end align-items-center">
+            <Col xs={2} className="d-flex justify-content-end align-items-center">
               <img src={ShopIcon} alt="shopIcon" height="21px" />
             </Col>
           </Row>
@@ -38,4 +38,15 @@ export default index;
 
 const NavigationBar = styled.nav`
   padding: 50px 100px;
+`;
+
+const NavLink = styled(Nav.Link)`
+  padding-right: 30px !important;
+  padding-left: 30px !important;
+  font-family: Poppins !important;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+  color: #333333 !important;
 `;

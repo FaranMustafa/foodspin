@@ -1,11 +1,16 @@
 import React from 'react';
 
-import styled from 'styled-components';
-
+//components
 import Spinner from './features/spinner';
 import CircleSection from './components/CircleSection';
 
+//styles
+import styled from 'styled-components';
+import './App.css';
+
+// section component with lazy loading
 const NavBar = React.lazy(() => import('./components/Navbar'));
+const ContentSection = React.lazy(() => import('./components/ContentSection'));
 
 function App() {
   return (
@@ -13,6 +18,7 @@ function App() {
       <Layout>
         <NavBar />
         <CircleSection />
+        <ContentSection />
       </Layout>
     </React.Suspense>
   );
