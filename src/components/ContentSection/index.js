@@ -2,8 +2,6 @@ import React from 'react';
 
 //components
 import TextDetails from './textDetail';
-// import RotateFood from './foodRotate';
-
 import { Row, Col } from 'react-bootstrap';
 
 //styles
