@@ -9,11 +9,30 @@ import { Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 
 //images
-import { MainImage1, MainImage2, MainImage3 } from '../../assets/images/MainImages';
+import {
+  MainImage1,
+  MainImage2,
+  MainImage3,
+  MainImage1webp,
+  MainImage2webp,
+  MainImage3webp,
+} from '../../assets/images/MainImages';
 import { image1, image2, image3, image4, image5, image8 } from '../../assets/images/SubImages';
 
 const ContentSection = () => {
   const [index, setIndex] = React.useState(0);
+
+  const handleCarousalEffect = () => {
+    index < 2 ? setIndex(index + 1) : setIndex(0);
+  };
+
+  React.useEffect(() => {
+    const interval = setInterval(() => handleCarousalEffect(), 2000);
+    return () => {
+      clearInterval(interval);
+    };
+  }, [handleCarousalEffect]);
+
   const handleRight = () => {
     index < 2 && setIndex(index + 1);
   };
@@ -50,7 +69,10 @@ const data = [
     id: 0,
     backgroundColor: '#FFEEDE',
     color: '#FF922C',
-    mainImage: MainImage1,
+    mainImage: {
+      main: MainImage1,
+      webp: MainImage1webp,
+    },
     subImages: {
       image1: image5,
       image2: image3,
@@ -72,7 +94,10 @@ const data = [
     id: 1,
     backgroundColor: '#EAFFE2',
     color: '#54BF29',
-    mainImage: MainImage2,
+    mainImage: {
+      main: MainImage2,
+      webp: MainImage2webp,
+    },
 
     subImages: {
       image1: image3,
@@ -96,7 +121,10 @@ const data = [
     id: 0,
     backgroundColor: '#FFEEDE',
     color: '#FF922C',
-    mainImage: MainImage3,
+    mainImage: {
+      main: MainImage3,
+      webp: MainImage3webp,
+    },
 
     subImages: {
       image1: image4,

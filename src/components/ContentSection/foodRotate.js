@@ -41,7 +41,8 @@ const foodRotate = ({ data, handleRight, handleLeft }) => {
           <SpinnerDish style={{ left: '38vw', top: '52vh', backgroundImage: `url(${data.subImages.image8})` }} />
         </SpinnerWheel>
       </Spinner>
-      <MainDish id={data.id} src={data.mainImage} alt="Asian Cucumber Salad" />
+      <MainDish id={data.id} src={data.mainImage.main} alt="Asian Cucumber Salad" />
+
       <ArrowButtonWrap>
         <ArrowButton onClick={() => handleLeft()} color={data.color}>
           <img src={ArrowDown} alt="arrow-down" />
