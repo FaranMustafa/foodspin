@@ -11,7 +11,6 @@ import {
   MainDish,
   MainDishWrap,
 } from './styles.component';
-import CircleSection from '../CircleSection';
 
 //icons
 import { ArrowDown } from '../../assets/icons';
@@ -19,7 +18,6 @@ import { ArrowDown } from '../../assets/icons';
 const foodRotate = ({ data, subImages, handleRight, handleLeft }) => {
   return (
     <SpinnerContainer>
-      {/* <CircleSection></CircleSection> */}
       <Spinner bgcolor={data.backgroundColor}>
         <SpinnerWheel id={data.id} style={{ transform: `rotate(${data.rotate}deg)` }}>
           <SpinnerDish
