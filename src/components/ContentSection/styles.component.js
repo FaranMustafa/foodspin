@@ -30,14 +30,29 @@ const DashedLine = styled.div`
 const ArrowButtonWrap = styled.div`
   position: absolute;
   height: 100px;
-  bottom: 15%;
-  width: 50vw;
+  bottom: 7%;
+  width: 42rem;
   display: flex;
   justify-content: space-between;
 `;
 
 const SpinnerContainer = styled.div`
   position: relative;
+`;
+
+const Spinner = styled.div`
+  width: 74rem;
+  height: 74rem;
+  border-radius: 50%;
+  position: absolute;
+  top: -50rem;
+  left: -16rem;
+  display: flex;
+  align-items: flex-end;
+  z-index: -1;
+  overflow: hidden;
+  justify-content: center;
+  background-color: ${props => props.bgcolor};
 `;
 
 const SpinnerWheel = styled.div`
@@ -66,20 +81,6 @@ const SpinnerDish = styled.div`
   background: center;
   border-radius: 50%;
   background-size: contain;
-`;
-const Spinner = styled.div`
-  width: 1177px;
-  height: 1177px;
-  border-radius: 50%;
-  position: absolute;
-  top: -800px;
-  left: -260px;
-  display: flex;
-  align-items: flex-end;
-  z-index: -1;
-  overflow: hidden;
-  justify-content: center;
-  background-color: ${props => props.bgcolor};
 `;
 
 const rotateBackward = keyframes`
@@ -124,6 +125,20 @@ const rotateForward = keyframes`
   }
   `;
 
+// Dish Components
+const MainDishWrap = styled.div`
+  width: 500px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 550px;
+  transform: rotate(0deg);
+  transition: transform 0.7s linear;
+  top: 80px;
+  right: -100px;
+`;
+
 const MainDish = styled.img`
   animation: fadein ease-in 0.3s;
   position: absolute;
@@ -138,6 +153,8 @@ const MainDish = styled.img`
           ${rotateBackward} 0.5s linear forwards
         `};
 `;
+
+//Text Info Page Styles
 
 const fadeIn = keyframes`
 0% {
@@ -186,6 +203,7 @@ const Heading = styled.h2`
 `;
 
 const InfoWrap = styled.div`
+  margin-top: 10vh;
   animation: ${props =>
     props.id
       ? css`
@@ -231,19 +249,6 @@ const OrderButton = styled(Button)`
   line-height: 19px;
   text-transform: Uppercase;
   color: #ffffff;
-`;
-
-const MainDishWrap = styled.div`
-  width: 500px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 550px;
-  transform: rotate(0deg);
-  transition: transform 0.7s linear;
-  top: 80px;
-  right: -100px;
 `;
 
 export {

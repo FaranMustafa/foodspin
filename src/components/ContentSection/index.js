@@ -2,7 +2,7 @@ import React from 'react';
 
 //components
 import TextDetails from './textDetail';
-import RotateFood from './foodRotate';
+// import RotateFood from './foodRotate';
 
 import { Row, Col } from 'react-bootstrap';
 
@@ -20,6 +20,8 @@ import {
 } from '../../assets/images/MainImages';
 import { image1, image2, image3, image4, image5, image6, image7, image8, image9 } from '../../assets/images/SubImages';
 
+const RotateFood = React.lazy(() => import('./foodRotate'));
+
 const ContentSection = () => {
   const [index, setIndex] = React.useState(0);
 
@@ -27,12 +29,12 @@ const ContentSection = () => {
     index < 2 ? setIndex(index + 1) : setIndex(0);
   };
 
-  React.useEffect(() => {
-    const interval = setInterval(() => handleCarousalEffect(), 2000);
-    return () => {
-      clearInterval(interval);
-    };
-  }, [handleCarousalEffect]);
+  // React.useEffect(() => {
+  //   const interval = setInterval(() => handleCarousalEffect(), 2000);
+  //   return () => {
+  //     clearInterval(interval);
+  //   };
+  // }, [handleCarousalEffect]);
 
   const handleRight = () => {
     index < 2 && setIndex(index + 1);
