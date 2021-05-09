@@ -18,10 +18,10 @@ import { ArrowDown } from '../../assets/icons';
 //images
 import BorderSVG from '../../assets/images/DashedLine.svg';
 
-const foodRotate = ({ data, handleRight, handleLeft, rightPress, leftPress }) => {
+const foodRotate = ({ data, handleRight, handleLeft }) => {
   return (
     <SpinnerContainer>
-      <Spinner>
+      <Spinner bgcolor={data.backgroundColor}>
         <SpinnerWheel id={data.id}>
           {/* Dashed Line   */}
           <DashedLine style={{ backgroundImage: `url(${BorderSVG})` }} />

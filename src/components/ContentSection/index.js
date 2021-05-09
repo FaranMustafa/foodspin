@@ -3,7 +3,7 @@ import React from 'react';
 //components
 import TextDetails from './textDetail';
 import RotateFood from './foodRotate';
-import CircularSection from '../CircleSection';
+// import CircularSection from '../CircleSection';
 import { Row, Col } from 'react-bootstrap';
 
 //styles
@@ -23,12 +23,12 @@ const ContentSection = () => {
   };
   return (
     <ContentContainer>
-      <CircularSection backgroundColor={data[index].backgroundColor} />
+      {/* <CircularSection backgroundColor={data[index].backgroundColor} /> */}
       <Row className="w-100">
-        <Col xs={5}>
+        <Col md={5} sm={12}>
           <TextDetails data={data[index]} />
         </Col>
-        <Col xs={7}>
+        <Col xs={7} className="d-none d-lg-block">
           <RotateFood data={data[index]} handleRight={handleRight} handleLeft={handleLeft} />
         </Col>
       </Row>
@@ -41,6 +41,10 @@ export default ContentSection;
 const ContentContainer = styled.div`
   margin-top: 10vh;
   padding: 65px 100px;
+
+  @media (max-width: 768px) {
+    padding: 20px 50px;
+  }
 `;
 
 const data = [

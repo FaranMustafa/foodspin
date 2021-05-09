@@ -126,7 +126,8 @@ const Spinner = styled.div`
   border-radius: 50%;
   z-index: -1;
   clip-path: circle();
-  //   background-color: #ffeede;
+
+  background-color: ${props => props.bgcolor};
 `;
 
 const rotateBackward = keyframes`
