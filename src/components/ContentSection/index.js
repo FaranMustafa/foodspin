@@ -2,6 +2,7 @@ import React from 'react';
 
 //components
 import TextDetails from './textDetail';
+import RotateFood from './foodRotate';
 
 import { Row, Col } from 'react-bootstrap';
 
@@ -15,7 +16,9 @@ const index = () => {
         <Col xs={5}>
           <TextDetails />
         </Col>
-        <Col xs={7}></Col>
+        <Col xs={7}>
+          <RotateFood />
+        </Col>
       </Row>
     </ContentContainer>
   );
@@ -24,6 +27,6 @@ const index = () => {
 export default index;
 
 const ContentContainer = styled.div`
-  margin-top: 10vh;
+  //   margin-top: 10vh;
   padding: 65px 100px;
 `;
