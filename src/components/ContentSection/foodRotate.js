@@ -3,46 +3,67 @@ import React from 'react';
 //components
 import {
   ArrowButton,
-  DashedLine,
   ArrowButtonWrap,
   SpinnerContainer,
   SpinnerWheel,
   SpinnerDish,
   Spinner,
   MainDish,
+  MainDishWrap,
 } from './styles.component';
+import CircleSection from '../CircleSection';
 
 //icons
 import { ArrowDown } from '../../assets/icons';
 
-//images
-import BorderSVG from '../../assets/images/DashedLine.svg';
-
-const foodRotate = ({ data, handleRight, handleLeft }) => {
+const foodRotate = ({ data, subImages, handleRight, handleLeft }) => {
   return (
     <SpinnerContainer>
+      {/* <CircleSection></CircleSection> */}
       <Spinner bgcolor={data.backgroundColor}>
-        <SpinnerWheel id={data.id}>
-          {/* Dashed Line   */}
-          <DashedLine style={{ backgroundImage: `url(${BorderSVG})` }} />
-
-          {/* Dish Images */}
-          <SpinnerDish style={{ left: '46vw', backgroundImage: `url(${data.subImages.image1})` }} />
+        <SpinnerWheel id={data.id} style={{ transform: `rotate(${data.rotate}deg)` }}>
           <SpinnerDish
-            style={{ left: '475.99px', top: '80.0101px', backgroundImage: `url(${data.subImages.image2})` }}
+            style={{ transform: 'rotate(-85deg) translate(280px)', backgroundImage: `url(${subImages.image1})` }}
           />
-          <SpinnerDish style={{ left: '278px', top: '-2px', backgroundImage: `url(${data.subImages.image3})` }} />
           <SpinnerDish
-            style={{ left: '80.0101px', top: '80.0101px', backgroundImage: `url(${data.subImages.image4})` }}
+            style={{ transform: 'rotate(-121deg) translate(280px)', backgroundImage: `url(${subImages.image2})` }}
           />
-          <SpinnerDish style={{ left: '-4vw', top: '35vh', backgroundImage: `url(${data.subImages.image5})` }} />
-          <SpinnerDish style={{ left: '6vw', top: '52vh', backgroundImage: `url(${data.subImages.image6})` }} />
-          <SpinnerDish style={{ left: '21vw', top: '60vh', backgroundImage: `url(${data.subImages.image7})` }} />
-          <SpinnerDish style={{ left: '38vw', top: '52vh', backgroundImage: `url(${data.subImages.image8})` }} />
+          <SpinnerDish
+            style={{ transform: 'rotate(-157deg) translate(280px)', backgroundImage: `url(${subImages.image3})` }}
+          />
+          <SpinnerDish
+            style={{ transform: 'rotate(-193deg) translate(280px)', backgroundImage: `url(${subImages.image4})` }}
+          />
+          <SpinnerDish
+            style={{ transform: 'rotate(-229deg) translate(280px)', backgroundImage: `url(${subImages.image5})` }}
+          />
+          <SpinnerDish
+            style={{ transform: 'rotate(-265deg) translate(280px)', backgroundImage: `url(${subImages.image6})` }}
+          />
+          <SpinnerDish
+            style={{ transform: 'rotate(-301deg) translate(280px)', backgroundImage: `url(${subImages.image7})` }}
+          />
+          <SpinnerDish
+            style={{ transform: 'rotate(-337deg) translate(280px)', backgroundImage: `url(${subImages.image8})` }}
+          />
+          <SpinnerDish
+            style={{ transform: 'rotate(-373deg) translate(280px)', backgroundImage: `url(${subImages.image9})` }}
+          />
+          <SpinnerDish
+            style={{ transform: 'rotate(-409deg) translate(280px)', backgroundImage: `url(${subImages.image10})` }}
+          />
+          <SpinnerDish
+            style={{
+              transform: 'rotate(-337deg) translate(280px)',
+              backgroundImage: `url(${data.subImages.image8})`,
+            }}
+          />
         </SpinnerWheel>
       </Spinner>
-      <MainDish id={data.id} src={data.mainImage.main} alt="Asian Cucumber Salad" />
 
+      <MainDishWrap>
+        <MainDish id={data.id} src={data.mainImage.main} alt="Asian Cucumber Salad" />
+      </MainDishWrap>
       <ArrowButtonWrap>
         <ArrowButton onClick={() => handleLeft()} color={data.color}>
           <img src={ArrowDown} alt="arrow-down" />

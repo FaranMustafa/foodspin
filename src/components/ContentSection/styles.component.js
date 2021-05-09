@@ -5,9 +5,9 @@ import styled, { keyframes, css } from 'styled-components';
 import { Button } from 'react-bootstrap';
 
 const ArrowButton = styled(Button)`
+  background: ${props => props.color};
   width: 40px;
   height: 40px;
-  background: ${props => props.color};
   box-shadow: 0px 10px 20px #f5ece3;
   border-radius: 50%;
   border: none;
@@ -28,105 +28,57 @@ const DashedLine = styled.div`
 `;
 
 const ArrowButtonWrap = styled.div`
-  width: 46vw;
-  height: auto;
+  position: absolute;
+  height: 100px;
+  bottom: 15%;
+  width: 50vw;
   display: flex;
   justify-content: space-between;
-  position: fixed;
-  top: 78vh;
-  right: 6%;
 `;
 
 const SpinnerContainer = styled.div`
-  width: calc(100vw - 430px);
-  margin-right: -100px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
-
-const rotate45 = keyframes`
-0% {
-  transform: translate(-50%, -50%) rotate(-1260deg)
-}
-25% {
-  opacity: 0.25;
-}
-50% {
-    transform: translate(-50%, -50%) rotate(-1220deg)
-}
-75% {
-  opacity: 0.75;
-}
-100% {
-  transform: translate(-50%, -50%) rotate(-1260deg);
-}
-
-`;
-const rotate45back = keyframes`
-0% {
-  transform: translate(-50%, -50%) rotate(-1260deg)
-}
-25% {
-  opacity: 0.25;
-}
-50% {
-    transform: translate(-50%, -50%) rotate(-1280deg)
-}
-75% {
-  opacity: 0.75;
-}
-100% {
-  transform: translate(-50%, -50%) rotate(-1260deg);
-}
-
+  position: relative;
 `;
 
 const SpinnerWheel = styled.div`
-  width: 560px;
-  height: 540px;
-  //   border: 2px dashed #e87f1e;
-  border-radius: 50%;
-  position: absolute;
-  top: 93%;
-  left: 50%;
-  transition: all 0.5s ease-in-out;
-  transform: translate(-50%, -50%) rotate(-1260deg);
-
-  animation: ${props =>
-    props.id
-      ? css`
-          ${rotate45} 0.5s linear forwards
-        `
-      : css`
-          ${rotate45back} 0.5s linear forwards
-        `};
-`;
+position: relative;
+    width: 560px;
+    height: 560px;
+    border: 2px dashed #e87f1e;
+    border-radius: 50%;
+    transform: rotate(
+0deg
+);
+    transition: transform .7s linear;
+    margin-top: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 30vh;
+}`;
 const SpinnerDish = styled.div`
-  width: 97px;
-  height: 99px;
-  border-radius: 50%;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  //   background-position: center center;
-  //   background-size: cover;
-  background-position: -34px -22px;
-  background-size: 172% 181%;
+  transform: rotate(0deg);
+  transition: transform 0.7s linear;
+  width: 150px;
+  height: 150px;
+  background-repeat: no-repeat;
+  background: center;
+  border-radius: 50%;
+  background-size: contain;
 `;
 const Spinner = styled.div`
-  position: fixed;
-  width: 90vw;
-  height: 138vh;
-  right: -16%;
-  top: -66%;
+  width: 1177px;
+  height: 1177px;
   border-radius: 50%;
+  position: absolute;
+  top: -800px;
+  left: -260px;
+  display: flex;
+  align-items: flex-end;
   z-index: -1;
-  clip-path: circle();
-
+  overflow: hidden;
+  justify-content: center;
   background-color: ${props => props.bgcolor};
 `;
 
@@ -173,10 +125,10 @@ const rotateForward = keyframes`
   `;
 
 const MainDish = styled.img`
-  position: fixed;
-  border-radius: 50%;
-  right: 14vw !important;
-  top: 50vh !important;
+  animation: fadein ease-in 0.3s;
+  position: absolute;
+  animation: fade ease-out 0.3s;
+
   animation: ${props =>
     props.id
       ? css`
@@ -281,6 +233,19 @@ const OrderButton = styled(Button)`
   color: #ffffff;
 `;
 
+const MainDishWrap = styled.div`
+  width: 500px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 550px;
+  transform: rotate(0deg);
+  transition: transform 0.7s linear;
+  top: 80px;
+  right: -100px;
+`;
+
 export {
   ArrowButton,
   DashedLine,
@@ -295,4 +260,5 @@ export {
   Description,
   OrderButton,
   InfoWrap,
+  MainDishWrap,
 };
