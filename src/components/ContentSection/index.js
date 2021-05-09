@@ -29,12 +29,12 @@ const ContentSection = () => {
     index < 2 ? setIndex(index + 1) : setIndex(0);
   };
 
-  // React.useEffect(() => {
-  //   const interval = setInterval(() => handleCarousalEffect(), 2000);
-  //   return () => {
-  //     clearInterval(interval);
-  //   };
-  // }, [handleCarousalEffect]);
+  React.useEffect(() => {
+    const interval = setInterval(() => handleCarousalEffect(), 2000);
+    return () => {
+      clearInterval(interval);
+    };
+  }, [handleCarousalEffect]);
 
   const handleRight = () => {
     index < 2 && setIndex(index + 1);
