@@ -12,7 +12,7 @@ const index = () => {
     <NavigationBar>
       <Navbar expand="lg">
         <Navbar.Brand href="/">
-          <img src={LogoIcon} alt="logo" />
+          <img src={LogoIcon} alt="logo" width="84px" height="27px" />
         </Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse>
