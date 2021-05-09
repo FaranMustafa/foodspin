@@ -1,16 +1,16 @@
 import React from 'react';
 
-const index = () => {
+const index = ({ backgroundColor }) => {
   return (
     <div
       style={{
         width: '1177px',
         height: '1177px',
         borderRadius: '50%',
-        backgroundColor: '#FFEEDE',
+        backgroundColor: backgroundColor,
         position: 'absolute',
-        left: '22rem',
-        top: '-40rem',
+        left: '20rem',
+        top: '-38rem',
         zIndex: '-5',
       }}
     ></div>

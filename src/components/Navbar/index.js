@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { LogoIcon, ShopIcon } from '../../assets/icons';
 
 //components
-import { Navbar, Nav, Container, Row, Col } from 'react-bootstrap';
+import { Navbar, Nav, Container, Row, Col, Button } from 'react-bootstrap';
 
 const index = () => {
   return (
@@ -25,7 +25,9 @@ const index = () => {
               </Nav>
             </Col>
             <Col xs={2} className="d-flex justify-content-end align-items-center">
-              <img src={ShopIcon} alt="shopIcon" height="21px" />
+              <Button variant="link">
+                <img src={ShopIcon} alt="shopIcon" height="21px" />
+              </Button>
             </Col>
           </Row>
         </Navbar.Collapse>
